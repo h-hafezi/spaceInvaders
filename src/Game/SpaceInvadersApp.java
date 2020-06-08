@@ -63,6 +63,7 @@ public class SpaceInvadersApp extends Application {
                 }
             };
         }
+
         timer.start();
 
         //setting the aliens
@@ -73,7 +74,10 @@ public class SpaceInvadersApp extends Application {
     }
 
     private void nextLevel() {
-
+        root.getChildren().clear();
+        player = new Sprite(300, 750, 60, 60, "player", Color.BLUE);
+        root.getChildren().add(player);
+        System.gc();
         //removing the additional bullets and enemies
 
         sprites().forEach(s -> {
@@ -82,6 +86,7 @@ public class SpaceInvadersApp extends Application {
                 s.dead = true;
             } else if (s.type.equals("enemy")) {
                 s.dead = true;
+                s = null;
                 root.getChildren().remove(s);
             }
         });
@@ -127,6 +132,7 @@ public class SpaceInvadersApp extends Application {
                         if (s.getBoundsInParent().intersects(enemy.getBoundsInParent()) && !s.dead) {
                             point += 10;
                             enemy.dead = true;
+                            enemy = null;
                             root.getChildren().remove(s);
                             root.getChildren().remove(enemy);
                             s.dead = true;
@@ -137,6 +143,7 @@ public class SpaceInvadersApp extends Application {
                     sprites().stream().filter(e -> e.type.equals("enemy-bullet")).forEach(enemy_bullet -> {
                         if (s.getBoundsInParent().intersects(enemy_bullet.getBoundsInParent()) && !s.dead) {
                             enemy_bullet.dead = true;
+                            enemy_bullet = null;
                             root.getChildren().remove(s);
                             root.getChildren().remove(enemy_bullet);
                             s.dead = true;
@@ -168,12 +175,10 @@ public class SpaceInvadersApp extends Application {
                     //if enemies come too down you player will lose!
 
                     if (s.getTranslateY() > root.getHeight() - 100) {
-                        System.out.println("lost");
                         killed();
                     }
 
                     break;
-
             }
         });
 
@@ -206,11 +211,11 @@ public class SpaceInvadersApp extends Application {
         point = 0;
         gameIsOn = true;
         hardness = 0;
-        t = 0;
-        i = 0;
         hasBennRestarted = false;
         player = new Sprite(300, 750, 60, 60, "player", Color.BLUE);
         thisStage = stage;
+        t = 0;
+        i = 0;
 
         //setting action listeners
 
@@ -225,6 +230,9 @@ public class SpaceInvadersApp extends Application {
                     break;
             }
         });
+
+
+        //space
 
         scene.setOnKeyReleased(e -> {
             if (e.getCode().getCode() == 32) {
@@ -261,4 +269,5 @@ public class SpaceInvadersApp extends Application {
         assert root != null;
         stage.setScene(new Scene(root));
     }
+
 }
