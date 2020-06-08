@@ -86,7 +86,7 @@ public class SpaceInvadersApp extends Application {
             }
         });
 
-        //seting the aliens in the place
+        //setting the aliens in the place
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
@@ -95,7 +95,7 @@ public class SpaceInvadersApp extends Application {
             }
         }
 
-        hardness += 0.015;
+        hardness += 0.03;
     }
 
     private List<Sprite> sprites() {
@@ -140,7 +140,6 @@ public class SpaceInvadersApp extends Application {
                             root.getChildren().remove(s);
                             root.getChildren().remove(enemy_bullet);
                             s.dead = true;
-                            hasBennRestarted = false;
                         }
                     });
 
