@@ -6,9 +6,7 @@ this programme contains of three menus:
 
 the pregame one, one is the game menu and the one after game
 
-aliens move left and right and below and if their fighter is hit by alien rockets or aliens reach near the fighter,
-
-fighter will die.
+aliens move left and right and below and if their fighter is hit by alien rockets or aliens reach near the fighter, fighter will die.
 
 
 
