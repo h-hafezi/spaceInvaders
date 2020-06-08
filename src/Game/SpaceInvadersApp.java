@@ -134,6 +134,16 @@ public class SpaceInvadersApp extends Application {
                         }
                     });
 
+                    sprites().stream().filter(e -> e.type.equals("enemy-bullet")).forEach(enemy_bullet -> {
+                        if (s.getBoundsInParent().intersects(enemy_bullet.getBoundsInParent()) && !s.dead) {
+                            enemy_bullet.dead = true;
+                            root.getChildren().remove(s);
+                            root.getChildren().remove(enemy_bullet);
+                            s.dead = true;
+                            hasBennRestarted = false;
+                        }
+                    });
+
                     break;
 
                 case "enemy":

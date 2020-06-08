@@ -13,7 +13,6 @@ public class BackgroundMusic {
     private static Player player;
 
     Thread playMusic;
-    Thread background;
 
     public BackgroundMusic(String filename) {
         this.filename = filename;
@@ -35,12 +34,6 @@ public class BackgroundMusic {
         playMusic = new Thread(new PlayMusic());
         playMusic.start();
 
-    }
-
-    public void close() {
-        if (player != null) {
-            player.close();
-        }
     }
 
     static class PlayMusic implements Runnable {
