@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="465.0" prefWidth="485.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PreGame.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="465.0" prefWidth="628.0">
+         <children>
+            <ImageView fitHeight="550.0" fitWidth="866.0" layoutX="-20.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="141.0" layoutY="114.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="59.0" prefWidth="204.0" text="start the game" textFill="#ec2154">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="141.0" layoutY="244.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="59.0" prefWidth="204.0" text="exit" textFill="#e51818">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

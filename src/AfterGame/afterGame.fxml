@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="561.0" prefWidth="485.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AfterGame.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="465.0" prefWidth="628.0">
+            <children>
+                <ImageView fitHeight="754.0" fitWidth="1037.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/images.jpg" />
+                    </image>
+                </ImageView>
+                <Button layoutX="141.0" layoutY="216.0" mnemonicParsing="false" onAction="#restartButton" prefHeight="59.0" prefWidth="204.0" text="restart" textFill="#ec2154">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="59.0" prefWidth="204.0" text="exit" textFill="#e51818">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font></Button>
+            <Button layoutX="141.0" layoutY="294.0" mnemonicParsing="false" onAction="#backToMainMenuButton" prefHeight="59.0" prefWidth="204.0" text="back To Main Menu" textFill="#f74242">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Label layoutX="165.0" prefHeight="95.0" prefWidth="333.0" text="you lost" textFill="#f2ff00">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Label fx:id="scoreField" alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="128.0" prefHeight="42.0" prefWidth="323.0" text="your score: 2082" textAlignment="CENTER" textFill="#eff303">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+    </children>
+</GridPane>
